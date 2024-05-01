@@ -43,6 +43,7 @@ const login = () => {
                         <Form.Item
                             name="email"
                             rules={[{ required: true, message: 'Please input your Email!' }]}
+                            initialValue={'imran@gmail.com'}
                         >
 
                             <Input className='h-10' prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Enter your email" />
@@ -51,6 +52,7 @@ const login = () => {
                         <Form.Item
                             name="password"
                             rules={[{ required: true, message: 'Please input your Password!' }]}
+                            initialValue={'123456'}
                         >
 
                             <Input className='h-10'

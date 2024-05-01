@@ -22,6 +22,7 @@ const Dashboard = ({ children }) => {
     return (
         <Layout style={{
             minHeight: '100vh',
+            // height: '100vh',
         }}>
             <Sider
                 breakpoint="lg"
@@ -32,22 +33,25 @@ const Dashboard = ({ children }) => {
                 onCollapse={(collapsed, type) => {
                     console.log(collapsed, type);
                 }}
+
             >
-                <h1 className='text-white text-center pb-8 mt-5 text-xl'>Task Manager PH</h1>
-                <div className="demo-logo-vertical" />
-                <Menu
-                    theme="dark"
-                    mode="inline"
-                    defaultSelectedKeys={['projects']}
-                    items={[
-                        {
-                            key: 'projects',
-                            icon: <  AppstoreOutlined />,
-                            label: 'Dashboard',
-                            onClick: () => router.push('/projects'),
-                        },
-                    ]}
-                />
+                <div className="sider-content">
+                    <h1 className='text-white text-center pb-8 mt-5 text-xl'>Task Manager PH</h1>
+                    <div className="demo-logo-vertical" />
+                    <Menu
+                        theme="dark"
+                        mode="inline"
+                        defaultSelectedKeys={['projects']}
+                        items={[
+                            {
+                                key: 'projects',
+                                icon: <  AppstoreOutlined />,
+                                label: 'Dashboard',
+                                onClick: () => router.push('/projects'),
+                            },
+                        ]}
+                    />
+                </div> 
             </Sider>
             <Layout>
                 <Header

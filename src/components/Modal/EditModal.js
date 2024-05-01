@@ -11,7 +11,7 @@ const EditModal = ({ isUpdateModalVisible, handleCloseModal, selectedProject }) 
 
     const handleEditSubmit = async (projectData) => {
         try {
-            const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/projects/${selectedProject._id}`, {
+            const response = await fetch(`https://task-management-wheat-omega.vercel.app/api/v1/projects/${selectedProject._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

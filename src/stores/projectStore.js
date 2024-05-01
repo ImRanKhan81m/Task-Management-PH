@@ -6,7 +6,7 @@ export const useProjectStore = create((set) => ({
 
   fetchProjects: async () => {
     try {
-      const response = await fetch('https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/projects');
+      const response = await fetch('https://task-management-wheat-omega.vercel.app/api/v1/projects');
       console.log(response, '========res==========');
       const data = await response.json();
       set({ projects: data }); // Update projects state
@@ -18,7 +18,7 @@ export const useProjectStore = create((set) => ({
   // get project by id
   getProjectById: async (projectId) => {
     try {
-      const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/projects/${projectId}`);
+      const response = await fetch(`https://task-management-wheat-omega.vercel.app/api/v1/projects/${projectId}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -30,7 +30,7 @@ export const useProjectStore = create((set) => ({
 
   updateProject: async (projectId, projectData) => {
     try {
-      const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/projects/${projectId}`, {
+      const response = await fetch(`https://task-management-wheat-omega.vercel.app/api/v1/projects/${projectId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

@@ -29,6 +29,10 @@ const EditTaskModal = ({  isEditModalVisible, handleCloseModal, selectedTask, se
                 toast.success('Task deleted Successfully');
                 handleCloseModal();
                 setRefetch(Math.random());
+
+                // clear form fields
+
+                
             }
 
         } catch (error) {

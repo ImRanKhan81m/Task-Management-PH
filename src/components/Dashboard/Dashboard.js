@@ -44,7 +44,7 @@ const Dashboard = ({ children }) => {
                             key: 'projects',
                             icon: <  AppstoreOutlined />,
                             label: 'Dashboard',
-                            onClick: () => router.push('projects'),
+                            onClick: () => router.push('/projects'),
                         },
                     ]}
                 />

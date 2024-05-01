@@ -5,7 +5,7 @@ export const taskStore = create((set) => ({
 
     fetchTasks: async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/v1/tasks');
+            const response = await fetch('https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/tasks');
             const data = await response.json();
             set({ tasks: data }); // Update tasks state
         } catch (error) {
@@ -16,7 +16,7 @@ export const taskStore = create((set) => ({
     // get task by id 
     getTaskById: async (taskId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/tasks/${taskId}`);
+            const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/tasks/${taskId}`);
             const data = await response.json();
             return data;
         } catch (error) {
@@ -27,7 +27,7 @@ export const taskStore = create((set) => ({
     // get task by project id
     getTasksByProjectId: async (projectId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/tasks/project/${projectId}`);
+            const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/tasks/project/${projectId}`);
             const data = await response.json();
             return data;
         } catch (error) {
@@ -36,9 +36,9 @@ export const taskStore = create((set) => ({
     },
 
     // create task
-    createTask: async (taskData) => { 
+    createTask: async (taskData) => {
         try {
-            const response = await fetch('http://localhost:5000/api/v1/tasks', {
+            const response = await fetch('https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/tasks', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export const taskStore = create((set) => ({
     // update task
     updateTask: async (taskId, taskData) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/tasks/${taskId}`, {
+            const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/tasks/${taskId}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export const taskStore = create((set) => ({
     // delete task
     deleteTask: async (taskId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/tasks/${taskId}`, {
+            const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/tasks/${taskId}`, {
                 method: 'DELETE',
             });
 

@@ -7,7 +7,7 @@ const DeleteTaskModal = ({ isDeleteModalVisible, handleCloseModal, selectedTask,
 
     const handleDeleteProject = async (projectData) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/tasks/${selectedTask._id}`, {
+            const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/tasks/${selectedTask._id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

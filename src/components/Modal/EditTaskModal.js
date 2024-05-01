@@ -3,12 +3,12 @@ import { Button, Form, Input, Modal, Select } from 'antd';
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const EditTaskModal = ({  isEditModalVisible, handleCloseModal, selectedTask, setRefetch }) => {
+const EditTaskModal = ({ isEditModalVisible, handleCloseModal, selectedTask, setRefetch }) => {
 
 
     const handleEditSubmit = async (projectData) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/tasks/${selectedTask._id}`, {
+            const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/tasks/${selectedTask._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const EditTaskModal = ({  isEditModalVisible, handleCloseModal, selectedTask, se
 
                 // clear form fields
 
-                
+
             }
 
         } catch (error) {

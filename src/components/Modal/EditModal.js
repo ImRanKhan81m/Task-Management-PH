@@ -11,7 +11,7 @@ const EditModal = ({ isUpdateModalVisible, handleCloseModal, selectedProject }) 
 
     const handleEditSubmit = async (projectData) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/projects/${selectedProject._id}`, {
+            const response = await fetch(`https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/projects/${selectedProject._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const EditModal = ({ isUpdateModalVisible, handleCloseModal, selectedProject }) 
             // Display an error message to the user (optional)
         }
     }
- 
+
 
     return (
         <Modal
@@ -50,7 +50,7 @@ const EditModal = ({ isUpdateModalVisible, handleCloseModal, selectedProject }) 
             footer={null}
             onCancel={handleCloseModal}
             onFinish={handleEditSubmit}
-            
+
         >
             <h1 className='text-2xl font-bold mb-5'>Update Project</h1>
             {/* Project creation form goes here */}
@@ -64,8 +64,8 @@ const EditModal = ({ isUpdateModalVisible, handleCloseModal, selectedProject }) 
                 <Form.Item
                     name="projectName"
 
-                > 
-                    <Input className='h-10' type='text' placeholder="Enter your project name"  defaultValue={selectedProject.projectName} />
+                >
+                    <Input className='h-10' type='text' placeholder="Enter your project name" defaultValue={selectedProject.projectName} />
                 </Form.Item>
                 <h1 className=' my-1'>Project Description</h1>
                 <Form.Item
@@ -83,7 +83,7 @@ const EditModal = ({ isUpdateModalVisible, handleCloseModal, selectedProject }) 
                 <Form.Item
                     name="status"
                 >
-                    <Select className='h-10'> 
+                    <Select className='h-10'>
                         <Select.Option value="Not Started">Not Started</Select.Option>
                         <Select.Option value="In Progress">In Progress</Select.Option>
                         <Select.Option value="On Hold">On Hold</Select.Option>

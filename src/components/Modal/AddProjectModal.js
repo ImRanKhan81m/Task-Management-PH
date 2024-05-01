@@ -11,7 +11,7 @@ const AddProjectModal = ({ isModalVisible, handleCloseModal }) => {
 
     const handleSubmit = async (projectData) => {
         try {
-            const response = await fetch('http://localhost:5000/api/v1/projects', {
+            const response = await fetch('https://task-management-j2riqt7fu-pro-it-guys.vercel.app/api/v1/projects', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

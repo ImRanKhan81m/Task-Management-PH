@@ -58,6 +58,7 @@ const Dashboard = ({ children }) => {
                     }}
                 />
                 <Content
+                // className='bg-[#2d285a]'
                     style={{
                         margin: '24px 16px 0',
                     }}
@@ -74,6 +75,7 @@ const Dashboard = ({ children }) => {
                     </div>
                 </Content>
                 <Footer
+                
                     style={{
                         textAlign: 'center',
                     }}

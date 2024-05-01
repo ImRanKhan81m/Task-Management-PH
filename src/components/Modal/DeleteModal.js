@@ -1,5 +1,5 @@
 import { useProjectStore } from '@/stores/projectStore';
-import { Button, Form, Input, Modal, Select } from 'antd';
+import { Modal } from 'antd';
 import React from 'react';
 import { toast } from 'react-toastify';
 
@@ -15,7 +15,7 @@ const DeleteModal = ({ isDeleteModalVisible, handleCloseModal, selectedProject }
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
-                }, 
+                },
             });
 
             if (!response.ok) {

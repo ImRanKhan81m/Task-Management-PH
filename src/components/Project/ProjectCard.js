@@ -1,8 +1,9 @@
 import React from 'react';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { useRouter } from 'next/navigation';
 
 const ProjectCard = ({ project, setIsUpdateModalVisible, setSelectedProject, setIsDeleteModalVisible }) => {
-
+    const router = useRouter();
     const { projectName, description, status } = project;
 
     const getStatusColor = () => {
@@ -33,8 +34,12 @@ const ProjectCard = ({ project, setIsUpdateModalVisible, setSelectedProject, set
 
     return (
         <div className='border border-gray-200 p-5 rounded-md shadow-md  '>
-            <h1 className='text-lg font-bold'>{project.projectName}</h1>
-            <p>{project.description}</p>
+            <div onClick={() => router.push(`/projects/${project._id}`)} className='cursor-pointer'>
+                <h1
+
+                    className='text-lg font-bold cursor-pointer'>{project.projectName}</h1>
+                <p>{project.description}</p>
+            </div>
 
             <div>
                 <div className='flex mt-5 justify-between items-center'>

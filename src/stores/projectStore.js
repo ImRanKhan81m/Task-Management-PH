@@ -15,6 +15,17 @@ export const useProjectStore = create((set) => ({
     }
   },
 
+  // get project by id
+  getProjectById: async (projectId) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/v1/projects/${projectId}`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Failed to fetch project:", error);
+    }
+  },
+
   // update project 
 
   updateProject: async (projectId, projectData) => {

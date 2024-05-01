@@ -4,18 +4,18 @@ import { Button, Form, Input, Modal, Select } from 'antd';
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const AddTaskModal = ({ isModalVisible, handleCloseModal, id }) => {
+const AddTaskModal = ({ isModalVisible, handleCloseModal, id ,setRefetch}) => {
     const { tasks, fetchTasks, createTask } = taskStore();
 
     const handleSubmit = async (projectData) => {
 
         projectData.project = id;
         const response = await createTask(projectData);
-
-        console.log(response, '=add task modal');
+ 
         if (response.success) {
             handleCloseModal();
             fetchTasks();
+            setRefetch(Math.random());
             toast.success('Task created successfully');
         }
     };

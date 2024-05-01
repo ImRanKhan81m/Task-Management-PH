@@ -33,7 +33,7 @@ const ProjectCard = ({ project, setIsUpdateModalVisible, setSelectedProject, set
 
 
     return (
-        <div className='border border-gray-200 p-5 rounded-md shadow-md  '>
+        <div className='border border-gray-200 p-5 rounded-md shadow-md  hover:shadow-lg duration-200 '>
             <div onClick={() => router.push(`/projects/${project._id}`)} className='cursor-pointer'>
                 <h1
 

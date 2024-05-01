@@ -33,7 +33,7 @@ const Project = () => {
         setIsDeleteModalVisible(false);
     };
 
-   
+
 
     return (
         <Dashboard>
@@ -51,13 +51,13 @@ const Project = () => {
 
             <div>
                 {/* project show by card */}
-                <div className='grid grid-cols-4 gap-4 mt-5'>
+                <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mt-5'>
                     {projects?.data?.map((project) => <ProjectCard key={project._id} project={project} setIsUpdateModalVisible={setIsUpdateModalVisible} setSelectedProject={setSelectedProject} setIsDeleteModalVisible={setIsDeleteModalVisible} />)}
 
                 </div>
             </div>
 
-            <AddProjectModal isModalVisible={isModalVisible} handleCloseModal={handleCloseModal}/>
+            <AddProjectModal isModalVisible={isModalVisible} handleCloseModal={handleCloseModal} />
             <EditModal isUpdateModalVisible={isUpdateModalVisible} setIsUpdateModalVisible={setIsUpdateModalVisible} handleCloseModal={handleCloseModal} selectedProject={selectedProject} />
 
             <DeleteModal isDeleteModalVisible={isDeleteModalVisible} setIsDeleteModalVisible={setIsDeleteModalVisible} handleCloseModal={handleCloseModal} selectedProject={selectedProject} />

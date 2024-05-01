@@ -21,9 +21,8 @@ const Dashboard = ({ children }) => {
 
     return (
         <Layout style={{
-            minHeight: '100vh', 
+            minHeight: '100vh',
         }}>
-          
             <Sider
                 breakpoint="lg"
                 collapsedWidth="0"
@@ -32,9 +31,9 @@ const Dashboard = ({ children }) => {
                 }}
                 onCollapse={(collapsed, type) => {
                     console.log(collapsed, type);
-                }} 
+                }}
             >
-                  <h1 className='text-white text-center pb-8 mt-5 text-xl'>Task Manager PH</h1>
+                <h1 className='text-white text-center pb-8 mt-5 text-xl'>Task Manager PH</h1>
                 <div className="demo-logo-vertical" />
                 <Menu
                     theme="dark"
@@ -58,7 +57,7 @@ const Dashboard = ({ children }) => {
                     }}
                 />
                 <Content
-                // className='bg-[#2d285a]'
+                    // className='bg-[#2d285a]'
                     style={{
                         margin: '24px 16px 0',
                     }}
@@ -75,12 +74,12 @@ const Dashboard = ({ children }) => {
                     </div>
                 </Content>
                 <Footer
-                
+
                     style={{
                         textAlign: 'center',
                     }}
                 >
-                    Ant Design ©{new Date().getFullYear()} Created by Ant UED
+                    Copyright ©{new Date().getFullYear()} Design & Developed by Imran Hossen
                 </Footer>
             </Layout>
         </Layout>

@@ -36,8 +36,7 @@ export const taskStore = create((set) => ({
     },
 
     // create task
-    createTask: async (taskData) => {
-        console.log(taskData, 'taskData');
+    createTask: async (taskData) => { 
         try {
             const response = await fetch('http://localhost:5000/api/v1/tasks', {
                 method: 'POST',

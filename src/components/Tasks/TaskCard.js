@@ -1,7 +1,7 @@
 import React from 'react';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
-const TaskCard = ({ task , setSelectedTask, setIsDeleteModalVisible}) => {
+const TaskCard = ({ task, setSelectedTask, setIsEditModalVisible, setIsDeleteModalVisible }) => {
 
     const taskDeadline = task?.deadline;
 
@@ -11,7 +11,8 @@ const TaskCard = ({ task , setSelectedTask, setIsDeleteModalVisible}) => {
     const date = taskDeadline.substring(8, 10);
 
     const onEdit = () => {
-        setSelectedTask(task) 
+        setSelectedTask(task)
+        setIsEditModalVisible(true)
     }
 
     const onDelete = () => {

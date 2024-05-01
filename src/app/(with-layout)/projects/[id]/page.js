@@ -2,6 +2,7 @@
 import Dashboard from '@/components/Dashboard/Dashboard';
 import AddTaskModal from '@/components/Modal/AddTaskModal';
 import DeleteTaskModal from '@/components/Modal/DeleteTaskModal';
+import EditTaskModal from '@/components/Modal/EditTaskModal';
 import TaskCard from '@/components/Tasks/TaskCard';
 import { useProjectStore } from '@/stores/projectStore';
 import { taskStore } from '@/stores/taskStore';
@@ -12,6 +13,7 @@ import React, { useEffect, useState } from 'react';
 const ProjectDetails = ({ params }) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
+    const [isEditModalVisible, setIsEditModalVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [tasks, setTasks] = useState([]);
     const [project, setProject] = useState({});
@@ -67,6 +69,7 @@ const ProjectDetails = ({ params }) => {
     const handleCloseModal = () => {
         setIsModalVisible(false);
         setIsDeleteModalVisible(false);
+        setIsEditModalVisible(false);
     };
 
 
@@ -106,7 +109,7 @@ const ProjectDetails = ({ params }) => {
                                     <h1 className='text-xl font-bold'> To do / {getToDoTasks?.length}</h1>
                                 </div>
                                 {
-                                    getToDoTasks?.map((task) => <TaskCard key={task.id} task={task} setSelectedTask={setSelectedTask} setIsDeleteModalVisible={setIsDeleteModalVisible}/>)
+                                    getToDoTasks?.map((task) => <TaskCard key={task.id} task={task} setSelectedTask={setSelectedTask} setIsDeleteModalVisible={setIsDeleteModalVisible} setIsEditModalVisible={setIsEditModalVisible} />)
                                 }
                             </div>
                             <div className='bg-[#f3f7ff5b] rounded-md shadow p-5 '>
@@ -114,7 +117,7 @@ const ProjectDetails = ({ params }) => {
                                     <h1 className='text-xl font-bold'> In Progress / {getInProgressTasks?.length}</h1>
                                 </div>
                                 {
-                                    getInProgressTasks?.map((task) => <TaskCard key={task.id} task={task} setSelectedTask={setSelectedTask} setIsDeleteModalVisible={setIsDeleteModalVisible} />)
+                                    getInProgressTasks?.map((task) => <TaskCard key={task.id} task={task} setSelectedTask={setSelectedTask} setIsDeleteModalVisible={setIsDeleteModalVisible} setIsEditModalVisible={setIsEditModalVisible} />)
                                 }
                             </div>
                             <div className='bg-[#f3f7ff5b] rounded-md shadow p-5 '>
@@ -122,7 +125,7 @@ const ProjectDetails = ({ params }) => {
                                     <h1 className='text-xl font-bold'> Done / {getDoneTasks?.length}</h1>
                                 </div>
                                 {
-                                    getDoneTasks?.map((task) => <TaskCard key={task.id} task={task} setSelectedTask={setSelectedTask} setIsDeleteModalVisible={setIsDeleteModalVisible}/>)
+                                    getDoneTasks?.map((task) => <TaskCard key={task.id} task={task} setSelectedTask={setSelectedTask} setIsDeleteModalVisible={setIsDeleteModalVisible} setIsEditModalVisible={setIsEditModalVisible} />)
                                 }
                             </div>
                         </>
@@ -140,7 +143,8 @@ const ProjectDetails = ({ params }) => {
             }
 
             <AddTaskModal isModalVisible={isModalVisible} handleCloseModal={handleCloseModal} id={id} setRefetch={setRefetch} />
-            <DeleteTaskModal isDeleteModalVisible={isDeleteModalVisible} setIsDeleteModalVisible={setIsDeleteModalVisible} handleCloseModal={handleCloseModal} selectedTask={selectedTask} setRefetch={setRefetch}/>
+            <EditTaskModal isEditModalVisible={isEditModalVisible} setIsEditModalVisible={setIsEditModalVisible} handleCloseModal={handleCloseModal} selectedTask={selectedTask} setRefetch={setRefetch} />
+            <DeleteTaskModal isDeleteModalVisible={isDeleteModalVisible} setIsDeleteModalVisible={setIsDeleteModalVisible} handleCloseModal={handleCloseModal} selectedTask={selectedTask} setRefetch={setRefetch} />
         </Dashboard>
     );
 };

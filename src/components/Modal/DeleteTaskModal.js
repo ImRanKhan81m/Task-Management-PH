@@ -30,7 +30,7 @@ const DeleteTaskModal = ({ isDeleteModalVisible, handleCloseModal, selectedTask,
             }
 
         } catch (error) {
-            console.error('Error deleting project:', error);
+            console.error('Error deleting task:', error);
             // Display an error message to the user (optional)
         }
     }

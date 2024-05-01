@@ -4,7 +4,7 @@ import ProtectedRoute from "../hooks/ProtectedRoute";
 const HomePage = () => {
   return (
     <ProtectedRoute> 
-      <Dashboard/>
+        <Dashboard /> 
     </ProtectedRoute>
   )
 }

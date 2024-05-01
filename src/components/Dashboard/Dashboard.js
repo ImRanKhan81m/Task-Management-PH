@@ -28,10 +28,10 @@ const Dashboard = ({ children }) => {
                 breakpoint="lg"
                 collapsedWidth="0"
                 onBreakpoint={(broken) => {
-                    // console.log(broken);
+                    console.log(broken);
                 }}
                 onCollapse={(collapsed, type) => {
-                    // console.log(collapsed, type);
+                    console.log(collapsed, type);
                 }} 
             >
                   <h1 className='text-white text-center pb-8 mt-5 text-xl'>Task Manager PH</h1>

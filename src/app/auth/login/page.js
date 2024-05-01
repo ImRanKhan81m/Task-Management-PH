@@ -13,7 +13,7 @@ const login = () => {
         // set email on local storage
         localStorage.setItem('email', values.email);
         // redirect to dashboard
-        router.push('/');
+        router.push('/projects');
         toast.success('Login Successfully');
     };
 
@@ -58,16 +58,7 @@ const login = () => {
                                 type="password"
                                 placeholder="Password"
                             />
-                        </Form.Item>
-                        <Form.Item>
-                            <Form.Item name="remember" valuePropName="checked" noStyle>
-                                <Checkbox>Remember me</Checkbox>
-                            </Form.Item>
-
-                            <a className="login-form-forgot" href="">
-                                Forgot password
-                            </a>
-                        </Form.Item>
+                        </Form.Item> 
 
                         <Form.Item>
                             <Button type="primary" htmlType="submit" className="login-form-button">

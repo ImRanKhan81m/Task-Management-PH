@@ -1,5 +1,8 @@
 ## Project Management Dashboard
 
+**Live Website Link:**
+https://task-management-frontend-livid.vercel.app/projects
+
 This project is a Nextjs application that serves as a project management dashboard, allowing users to create, manage, and track projects and tasks. 
 
 **Features:**
@@ -24,10 +27,8 @@ This project is a Nextjs application that serves as a project management dashboa
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev` (or `yarn dev`)
 
-**Live Website Link (For Assessment Only):**
-
-*Due to the project utilizing mock data and focusing on functionalities, a live website deployment might not be necessary for the assessment. 
-*However, if you choose to deploy, you can replace this section with a link to your deployed application.*
+**Live Website Link:**
+https://task-management-frontend-livid.vercel.app/projects
 
 **Technologies Used:**
 

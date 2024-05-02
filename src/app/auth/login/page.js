@@ -19,17 +19,17 @@ const login = () => {
 
 
     return (
-        <div className='flex max-h-[100%] w-[100%] justify-center items-center gap-20'>
-            <div className='w-[50%]'>
+        <div className='md:flex max-h-[100%] w-[100%] justify-center items-center lg:gap-20 '>
+            <div className='md:w-[50%]'>
                 <Image
                     src={loginImage}
                     alt="logo"
                     width={1200}
                     height={1200}
-                    className='object-cover w-[100%] h-max-[100%]'
+                    className='object-cover w-[100%] md:h-[100vh] md:flex hidden'
                 />
             </div>
-            <div className='w-[50%] mx-auto'>
+            <div className='md:w-[50%] mx-auto mt-20 md:mt-0'>
                 <div className='w-[80%] mx-auto'>
                     <h1 className='text-3xl font-bold mb-5 '>Login Your Account </h1>
 
